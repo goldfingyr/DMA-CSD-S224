@@ -9,7 +9,7 @@
         "ConnectionString": "Data Source=localhost;Persist Security Info=True;User ID=sa;Password=@12tf56so"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "http://localhost:5076"
+      "applicationUrl": "http://localhost:5285"
     },
     "IIS Express": {
       "commandName": "IISExpress",
@@ -34,7 +34,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:55453",
+      "applicationUrl": "http://localhost:36131",
       "sslPort": 0
     }
   }
