@@ -1,0 +1,39 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@if (Model.Cars.Count > 0)
+{
+    <div class="row">
+        <div class="col">
+            <h3>List of cars</h3>
+            @foreach(var item in Model.Cars)
+            {
+                <h3>Car</h3>
+                <p>
+                    @item.Licensplate<br/>
+                    @item.Make<br>
+                    @item.Model<br>
+                    @item.Color
+                </p>
+            }
+        </div>
+    </div>
+}
+<div class="row">
+    <div class="col">
+        @if (Model.CarSelected != null)
+        {
+            <h3>Selected car</h3>
+            <p>@Model.CarSelected</p>
+        }
+        <h3>Find car</h3>
+        <form method="post">
+            <input type="text" name="target" />
+            <input type="hidden" name="action" value="findCar" />
+            <input type="submit" value="Submit"/>
+        </form>
+    </div>
+</div>
