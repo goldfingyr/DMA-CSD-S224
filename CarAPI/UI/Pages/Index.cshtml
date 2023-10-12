@@ -8,6 +8,9 @@
 {
     <div class="row">
         <div class="col">
+            <div class="ajax1">
+                doesn't work'
+            </div>
             <h3>List of cars</h3>
             @foreach(var item in Model.Cars)
             {
@@ -37,3 +40,30 @@
         </form>
     </div>
 </div>
+
+@section Scripts
+    {
+    <script>
+        function ajax2() {
+            $.ajax({
+                type: "POST",
+                url: "?handler=ajax1",
+                data: { data: "" },
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN",
+                        $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                dataType: "json",
+                success: function (response) {
+                        $('#ajax1').html(response.result);
+                    }
+                }
+            });
+        }
+        function functionInterval() {
+            ajax1();
+        }
+
+        setInterval(functionInterval, 2000);
+    </script>
+}

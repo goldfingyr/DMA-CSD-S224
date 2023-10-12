@@ -82,5 +82,10 @@ namespace UI.Pages
             }
             return null;
         }
+
+        public IActionResult OnPostAjax1()
+        {
+            return new JsonResult(new { result = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") });
+         }
     }
 }
